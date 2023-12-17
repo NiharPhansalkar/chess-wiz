@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Chessboard } from "react-chessboard";
 import "../styles/alignBoardStyles.css";
 import { Chess } from "chess.js";
@@ -9,8 +9,8 @@ interface pieceMove {
   promotion: string;
 }
 
-function GamePage({ orientation }) {
-  const chess = useRef<ChessInstance>(new Chess());
+function GamePage() {
+  const chess = useRef(new Chess());
   const [fen, setFen] = useState<string>(chess.current.fen());
 
   useEffect(() => {
